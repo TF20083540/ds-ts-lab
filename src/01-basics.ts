@@ -12,7 +12,16 @@ const friend1 = {
     age: 31,
   };
   
-  export const friends = [friend1, friend2];
+  //export const friends = [friend1, friend2];
+
+//Replacement friends const test
+
+export const friends = {
+    current: [friend1, friend2],
+    former: [],
+  };
+
+
   //console.log(friends[1]);
   
   //   -------------------
