@@ -1,0 +1,1 @@
+$ npx ts-node *path*/*File_Name*.ts
