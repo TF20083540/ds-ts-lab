@@ -142,29 +142,32 @@ function highestExtension(cs: Colleague[]){
 */
 
 //--Next Section: Optionals - Optionals
-//Example
-console.log("===================================");
-console.log("===== Optionals Example Start =====");
-
-
-
-
-
-
-
-console.log("===== Optionals Example Emds ======");
-console.log("===================================");
-console.log("")
 
 //Lab
 console.log("===================================");
 console.log("===== Interests Labwork Start =====");
 
+function addInterest(friend: Friend, newInterest: string): string[]{
+  //Begin.
+  
+  if (!friend.interests) {
+    friend.interests = []; // define the interests array if it's undefined
+  }
+  friend.interests.push(newInterest);
+  //console.log(friend.interests); //Debug
+
+  return friend.interests; 
+}
 
 
-
-
-
+console.log(addInterest(friends.current[1], 'Politics')) //invoke
+// [ 'Music', 'Sport', 'Politics' ] //Expected Response
+//The instructions said to use "console.log(addInterest(friends[0], 'Politics'));" for invocation.
+//I do not believe that using this is actually possible.
+//The reason being that the friends array must either go entirely as a paramater and be unpacked inside the function
+// or to be unpacked before sending as a parameter.
+//Therefore I made the smallest change I could to be as accurate to what I believe was the original intention of this section
+//of labwork.
 
 console.log("===== Interests Labwork Ends ======");
 console.log("===================================");
