@@ -76,18 +76,26 @@ function highestExtension(cs: Colleague[]){
   console.log("=================================");
   console.log("=== sortColleagues example Start===");
   function sortColleagues(
-    colleagues: Colleague[], 
-    sorter: (c1: Colleague, c2: Colleague) => number
+    colleagues: Colleague[],
+    sorter: (c1: Colleague, c2: Colleague) => number,
+    max? : number
   ): EmailContact[] {
-    const sorted = colleagues.sort(sorter); // Colleague[] inferred
-    const result: EmailContact[] = sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
-    return result 
+    let end = colleagues.length;
+    if (max !== undefined) {
+       end = max < 2 ? 1 : max
+    }
+    const sorted = colleagues.sort(sorter);
+    const fullResult =  sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
+    return fullResult.slice(0,end)
   }
-
-  console.log(sortColleagues(colleagues.current, (a,b) => a.contact.extension - b.contact.extension));
-  console.log(sortColleagues(colleagues.current, (a,b) => a.name.length - b.name.length));
+  // Test invocations
+  console.log(sortColleagues(colleagues.current, (a, b) => (a.contact.extension - b.contact.extension),3));
+  console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
+  console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
+  
   console.log("=== sortColleagues example end===");
   console.log("=================================");
+  console.log("");
 
   
 
@@ -102,7 +110,7 @@ function highestExtension(cs: Colleague[]){
     //The function should simply search through the array  for the correct Friend entry.
     //const found: Friend[] = friends.current;
     //const single: Friend = found.find(finder);
-    const result: Friend[] = friends.current.filter(finder);
+    const found: Friend[] = friends.current.filter(finder);
     //var testString: string[] = [];
     
     //testString.push("Test");
@@ -110,21 +118,54 @@ function highestExtension(cs: Colleague[]){
     //console.log("Verify comparrison");
     //console.log(result);
 
-    const plop = result.map((ce) => (ce.name));
+    const results = found.map((ce) => (ce.name));
 
+    //Cheeky one-liner I found out of curiosity, combining the two seperate commands above together.
+    //const plop = friends.current.filter(finder).map((ce) => (ce.name));
 
     //testString.push();
 
-    return plop
+    return results
   }
 
   //console.log("First Function")
   console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
   //console.log("Second Function")
   console.log(findFriends(friends, (friend) => friend.age < 35));
+  console.log("=== Higher Order Functions Emds ===");
   console.log("===================================");
+  console.log("");
 
 /* //Expected results
 [ 'Paul Fleming' ]
 [ 'Paul Fleming', 'Jane Costello' ]
 */
+
+//--Next Section: Optionals - Optionals
+//Example
+console.log("===================================");
+console.log("===== Optionals Example Start =====");
+
+
+
+
+
+
+
+console.log("===== Optionals Example Emds ======");
+console.log("===================================");
+console.log("")
+
+//Lab
+console.log("===================================");
+console.log("===== Interests Labwork Start =====");
+
+
+
+
+
+
+
+console.log("===== Interests Labwork Ends ======");
+console.log("===================================");
+console.log("")
