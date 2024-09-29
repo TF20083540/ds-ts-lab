@@ -13,13 +13,21 @@ const friend2 : Friend = {
   age: 31,
   interests: ['Music', 'Sport']
 };
+
+//Added friend3 for Utility Types Debugging
+const friend3 : Friend = {
+  name: "Matt Mercer",
+  phone: "086--420691",
+  age: 44,
+  interests: ['Gaming', 'Music', "Anime"]
+};
   
   //export const friends = [friend1, friend2];
 
 //Replacement friends const test
 
 export const friends = {
-    current: [friend1, friend2],
+    current: [friend1, friend2, friend3],
     former: [],
   };
 
@@ -54,8 +62,18 @@ export const friends = {
     },
   };
 
+  //Added colleague4 for Utility Types Debugging.
+  const colleague4 = {
+    name: "Matt Mercer",
+    department: "Engineering 3",
+    contact: {
+      email: "cbmm@company.com",
+      extension: 575,
+    },
+  };
+
   export const colleagues = {
-    current: [colleague1, colleague2, colleague3],
+    current: [colleague1, colleague2, colleague3, colleague4],
     former: [],
   };
   
